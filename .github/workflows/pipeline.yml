@@ -29,7 +29,7 @@ jobs:
   run_ui_test:
 
     needs: build_and_unit_test
-    
+
     runs-on: ubuntu-latest
 
     steps:
@@ -44,5 +44,7 @@ jobs:
       run: npm install
     - name: Start the application
       run: npm run start &
+    - name: Install Playwright
+      run: npx playwright install
     - name: Run UI test
       run: npm run test:ui
